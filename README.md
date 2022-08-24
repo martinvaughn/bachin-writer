@@ -19,6 +19,7 @@ The way to run your code is to type in the terminal this command, with the sente
 
 `python3 bachin-writer.py "your sentence goes here"`
 
+If you want to change the list of svgs that are used in the future, but just make sure that the directory of the svgs is named `svgs`
 
 
 
