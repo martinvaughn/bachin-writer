@@ -16,6 +16,7 @@ Next run `pip3 install svg-stack` in the terminal.
 Now everything is ready!
 
 The way to run your code is to type in the terminal this command, with the sentence you want to include in quotation marks:
+
 `python3 bachin-writer.py "your sentence goes here"`
 
 
