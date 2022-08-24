@@ -19,15 +19,60 @@ def get_folder(char: str, idx: int):
         _path = "svgs/upper/upper_" + char
         num = get_random_number(_path)
         return ("char", _path + "/upper_" + char + "_" + str(num) + ".svg", idx)
+    #### Individual Checks
     if char == " ":
-        return ("space", "svgs/blank_template_4_x_10.svg", idx)
- 
-    # then individual items for punctuation. 
+        return ("space", "svgs/blank_template_7_x_10.svg", idx)
+    if char == ",":
+        _path = "svgs/punctuation/comma"
+        num = get_random_number(_path)
+        return ("char", _path + "/comma_"  + str(num) + ".svg", idx)
+    if char == ".":
+        _path = "svgs/punctuation/dot_period"
+        num = get_random_number(_path)
+        return ("char", _path + "/dot_"  + str(num) + ".svg", idx)
+    if char == "'":
+        _path = "svgs/punctuation/apostrophe"
+        num = get_random_number(_path)
+        return ("char", _path + "/apostrophe_"  + str(num) + ".svg", idx)
+    if char == "@":
+        _path = "svgs/special_characters/at_symbol"
+        num = get_random_number(_path)
+        return ("char", _path + "/at_symbol_"  + str(num) + ".svg", idx)
+    if char == "~":
+        return ("new_line", idx)
+
+    ### Numbers
+    if char == "0":
+        _path = "svgs/numbers/number_zero"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_zero_"  + str(num) + ".svg", idx)
+    if char == "1":
+        _path = "svgs/numbers/number_one"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_one_"  + str(num) + ".svg", idx)
+    if char == "2":
+        _path = "svgs/numbers/number_two"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_two_"  + str(num) + ".svg", idx)
+    # 3
+    if char == "4":
+        _path = "svgs/numbers/number_four"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_four_"  + str(num) + ".svg", idx)
+    # 5-7
+    if char == "8":
+        _path = "svgs/numbers/number_eight"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_eight_"  + str(num) + ".svg", idx)
+    if char == "9":
+        _path = "svgs/numbers/number_nine"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_nine_"  + str(num) + ".svg", idx)
 
 
 def main():
     doc = ss.Document()
-    input_str = "a aa"
+    input_str = "hello my name's what my name's who my name is slim shaddy. ~Please keep all hands and feet in the boat at all times and do not lose your balance because there are certainly sharks and sharks are not your friend no matter how cute you think they are, remember that all they see is a delicious human sived snack. don't @ me tho ~new line added here. 12 04 89~112244008899"
     ftuples = []
     for idx, char in enumerate(input_str):
         folder_tuple = get_folder(char, idx)
@@ -109,7 +154,7 @@ def main():
         word = []
         line_layout = ss.HBoxLayout()
         while i < len(ftuples):
-            if ftuples[i][0] == "new line":
+            if ftuples[i][0] == "new_line":
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
                 
