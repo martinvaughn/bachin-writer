@@ -1,6 +1,7 @@
 import os, os.path
 import svg_stack as ss
 from random import randint
+import sys
 
 def choose_number(count):
     ## return number between 1 and count
@@ -72,11 +73,14 @@ def get_folder(char: str, idx: int):
 
 def main():
     doc = ss.Document()
-    input_str = "hello my name's what my name's who my name is slim shaddy. ~Please keep all hands and feet in the boat at all times and do not lose your balance because there are certainly sharks and sharks are not your friend no matter how cute you think they are, remember that all they see is a delicious human sived snack. don't @ me tho ~new line added here. 12 04 89~112244008899. CloCK PRawn"
+    if len(sys.argv) == 1:
+        print("ERROR: Please provide an input string")
+        return 
+    input_str = sys.argv[1]
     ftuples = []
     for idx, char in enumerate(input_str):
         folder_tuple = get_folder(char, idx)
-        print(folder_tuple)
+        # print(folder_tuple)
         ftuples.append(folder_tuple)
  
     result_layout = ss.VBoxLayout()
