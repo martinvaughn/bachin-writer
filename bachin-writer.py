@@ -94,7 +94,7 @@ def main():
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
                 
-            if line_layout.get_size().width > 556: 
+            if line_layout.get_size().width > 580: 
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
                 i -= 1
