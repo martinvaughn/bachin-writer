@@ -1,6 +1,6 @@
 import svg_stack as ss
 import sys
-import writer_utils
+import writer_utils as writer_utils
 
 def main():
     doc = ss.Document()
