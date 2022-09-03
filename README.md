@@ -11,7 +11,7 @@ If this returns an error or anything other than Python 3._._, then you'll need t
 
 Once downloaded, you should be able to run `python3 --version` and have it return something like Python 3.10.0
 
-Next you'll download the following python packages. Run the followinng commands in your terminal:
+Next you'll download your python packages. Run the following commands in your terminal:
 
 `pip3 install lxml`
 `pip3 install six`
