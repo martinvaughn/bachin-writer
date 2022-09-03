@@ -27,7 +27,7 @@ def get_folder(char: str, idx: int):
     if char == " ":
         _path = "svgs/spaces"
         num = get_random_number(_path)
-        return ("space", "svgs/blank_template_" + str(num) + ".svg", idx)
+        return ("space", "svgs/spaces/blank_template_" + str(num) + ".svg", idx)
         
     if char == ",":
         _path = "svgs/punctuation/comma"
@@ -96,6 +96,10 @@ def main():
         word = []
         line_layout = ss.HBoxLayout()
         while i < len(ftuples):
+            if ftuples[i][0] == "new_line":
+                if ftuples[i-1][0] == "new_line" and ftuples[i] != ftuples[0]:
+                    line_layout.addSVG("svgs/blank_template.svg",alignment=ss.AlignLeft)
+
             if ftuples[i][0] == "new_line":
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
