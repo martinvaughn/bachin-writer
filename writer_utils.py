@@ -10,6 +10,8 @@ def get_random_number(path):
     return choose_number(count)# get the count of items within the path.
 
 def get_folder(char: str, idx: int):
+    
+    # Upper & Lower
     if char.islower():
         _path = "svgs/lower/lower_" + char
         num = get_random_number(_path)
@@ -18,15 +20,14 @@ def get_folder(char: str, idx: int):
         _path = "svgs/upper/upper_" + char.lower()
         num = get_random_number(_path)
         return ("char", _path + "/upper_" + char.lower() + "_" + str(num) + ".svg", idx)
-    #### Individual Checks
-    # old..
-    #if char == " ":
-    #    return ("space", "svgs/blank_template_7_x_10.svg", idx)
+    
+    # Spaces    
     if char == " ":
         _path = "svgs/spaces"
         num = get_random_number(_path)
         return ("space", "svgs/spaces/blank_template_" + str(num) + ".svg", idx)
         
+    # Punctuation
     if char == ",":
         _path = "svgs/punctuation/comma"
         num = get_random_number(_path)
@@ -59,12 +60,26 @@ def get_folder(char: str, idx: int):
         _path = "svgs/numbers/number_two"
         num = get_random_number(_path)
         return ("char", _path + "/number_two_"  + str(num) + ".svg", idx)
-    # 3
+    if char == "3":
+        _path = "svgs/numbers/number_three"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_three_"  + str(num) + ".svg", idx)
     if char == "4":
         _path = "svgs/numbers/number_four"
         num = get_random_number(_path)
         return ("char", _path + "/number_four_"  + str(num) + ".svg", idx)
-    # 5-7
+    if char == "5":
+        _path = "svgs/numbers/number_five"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_five_"  + str(num) + ".svg", idx)
+    if char == "6":
+        _path = "svgs/numbers/number_six"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_six_"  + str(num) + ".svg", idx)
+    if char == "7":
+        _path = "svgs/numbers/number_seven"
+        num = get_random_number(_path)
+        return ("char", _path + "/number_seven_"  + str(num) + ".svg", idx)
     if char == "8":
         _path = "svgs/numbers/number_eight"
         num = get_random_number(_path)
