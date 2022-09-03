@@ -23,32 +23,34 @@ def main():
         while i < len(ftuples):
             if ftuples[i][0] == "new_line":
                 if ftuples[i-1][0] == "new_line" and ftuples[i] != ftuples[0]:
-                    line_layout.addSVG("blank_template.svg", alignment=ss.AlignLeft)
+                    line_layout.addSVG("svgs/blank_template.svg", alignment=ss.AlignLeft)
                 white_space_length = (doc_width / 2) - (line_layout.get_size().width / 2)
-                dwg = svgwrite.Drawing('white_space.svg', size=(white_space_length, "10"))
+                dwg = svgwrite.Drawing('svgs/white_space.svg', size=(white_space_length, "10"))
                 dwg.save()
                 white_space_layout = ss.HBoxLayout()
-                white_space_layout.addSVG("white_space.svg", alignment=ss.AlignCenter)
+                white_space_layout.addSVG("svgs/white_space.svg", alignment=ss.AlignCenter)
                 centered_layout = ss.HBoxLayout()
                 centered_layout.addLayout(white_space_layout)
                 centered_layout.addLayout(line_layout)
-                result_layout.addLayout(line_layout)
+                result_layout.addLayout(centered_layout)
                 line_layout = ss.HBoxLayout()                    
+            
             if ftuples[i] == ftuples[-1]: 
                 word_layout = ss.HBoxLayout()
                 word.append(ftuples[i][1])
                 for file in word:
                     word_layout.addSVG(file, alignment=ss.AlignLeft)
-                if line_layout.get_size().width + word_layout.get_size().width > doc_width:
-                    white_space_length = (doc_width / 2) - (line_layout.get_size().width / 2)
-                    dwg = svgwrite.Drawing('white_space.svg', size=(white_space_length, "10"))
-                    dwg.save()
-                    white_space_layout = ss.HBoxLayout()
-                    white_space_layout.addSVG("white_space.svg", alignment=ss.AlignCenter)
-                    centered_layout = ss.HBoxLayout()
-                    centered_layout.addLayout(white_space_layout)
-                    centered_layout.addLayout(line_layout)
-                    result_layout.addLayout(centered_layout)
+                line_layout.addLayout(word_layout)
+                # if line_layout.get_size().width + word_layout.get_size().width > doc_width:
+                white_space_length = (doc_width / 2) - (line_layout.get_size().width / 2)
+                dwg = svgwrite.Drawing('svgs/white_space.svg', size=(white_space_length, "10"))
+                dwg.save()
+                white_space_layout = ss.HBoxLayout()
+                white_space_layout.addSVG("svgs/white_space.svg", alignment=ss.AlignCenter)
+                centered_layout = ss.HBoxLayout()
+                centered_layout.addLayout(white_space_layout)
+                centered_layout.addLayout(line_layout)
+                result_layout.addLayout(centered_layout)
                 line_layout = ss.HBoxLayout()
                 yes = False
             elif ftuples[i][0] == 'space':
@@ -58,10 +60,10 @@ def main():
                     word_layout.addSVG(file, alignment=ss.AlignLeft)
                 if line_layout.get_size().width + word_layout.get_size().width > doc_width:
                     white_space_length = (doc_width / 2) - (line_layout.get_size().width / 2)
-                    dwg = svgwrite.Drawing('white_space.svg', size=(white_space_length, "10"))
+                    dwg = svgwrite.Drawing('svgs/white_space.svg', size=(white_space_length, "5"))
                     dwg.save()
                     white_space_layout1 = ss.HBoxLayout()
-                    white_space_layout1.addSVG("white_space.svg", alignment=ss.AlignCenter)
+                    white_space_layout1.addSVG("svgs/white_space.svg", alignment=ss.AlignCenter)
                     centered_layout1 = ss.HBoxLayout()
                     centered_layout1.addLayout(white_space_layout1)
                     centered_layout1.addLayout(line_layout)
