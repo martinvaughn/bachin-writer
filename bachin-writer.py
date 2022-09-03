@@ -21,8 +21,14 @@ def get_folder(char: str, idx: int):
         num = get_random_number(_path)
         return ("char", _path + "/upper_" + char.lower() + "_" + str(num) + ".svg", idx)
     #### Individual Checks
+    # old..
+    #if char == " ":
+    #    return ("space", "svgs/blank_template_7_x_10.svg", idx)
     if char == " ":
-        return ("space", "svgs/blank_template_7_x_10.svg", idx)
+        _path = "svgs/spaces"
+        num = get_random_number(_path)
+        return ("space", "svgs/blank_template_" + str(num) + ".svg", idx)
+        
     if char == ",":
         _path = "svgs/punctuation/comma"
         num = get_random_number(_path)
