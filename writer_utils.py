@@ -10,7 +10,7 @@ def get_random_number(path):
     return choose_number(count)# get the count of items within the path.
 
 def get_folder(char: str, idx: int):
-    
+
     # Upper & Lower
     if char.islower():
         _path = "svgs/lower/lower_" + char
@@ -40,10 +40,20 @@ def get_folder(char: str, idx: int):
         _path = "svgs/punctuation/apostrophe"
         num = get_random_number(_path)
         return ("char", _path + "/apostrophe_"  + str(num) + ".svg", idx)
+
+    # Special Characters
     if char == "@":
         _path = "svgs/special_characters/at_symbol"
         num = get_random_number(_path)
         return ("char", _path + "/at_symbol_"  + str(num) + ".svg", idx)
+    if char == "#":
+        _path = "svgs/special_characters/hashtag"
+        num = get_random_number(_path)
+        return ("char", _path + "/hashtag_"  + str(num) + ".svg", idx)
+    if char == "-":
+        _path = "svgs/special_characters/hyphen"
+        num = get_random_number(_path)
+        return ("char", _path + "/hyphen_"  + str(num) + ".svg", idx)
     if char == "~":
         return ("new_line", idx)
 
