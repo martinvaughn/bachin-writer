@@ -23,28 +23,35 @@ def main():
         while i < len(ftuples):
             if ftuples[i][0] == "new_line":
                 if ftuples[i-1][0] == "new_line" and ftuples[i] != ftuples[0]:
-                    line_layout.addSVG("svgs/blank_template.svg",alignment=ss.AlignLeft)
+                    line_layout.addSVG("svgs/blank_template.svg", alignment=ss.AlignLeft)
 
             if ftuples[i][0] == "new_line":
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
+                # add micro space to line_layout here writer_utils.get_folder(“ “, random_idx)
+                mini_spaces_tuple = writer_utils.get_folder("£", 0)
+                line_layout.addSVG(mini_spaces_tuple[1], alignment=ss.AlignLeft)
                 
             if line_layout.get_size().width > 580: 
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
+                # add micro space to line_layout here
+                writer_utils.get_folder("£", 0)
+                mini_spaces_tuple = writer_utils.get_folder("£", 0)
+                line_layout.addSVG(mini_spaces_tuple[1], alignment=ss.AlignLeft)
                 i -= 1
             elif ftuples[i] == ftuples[-1]: 
                 word_layout = ss.HBoxLayout()
                 word.append(ftuples[i][1])
                 for file in word:
-                    word_layout.addSVG(file,alignment=ss.AlignLeft)
+                    word_layout.addSVG(file, alignment=ss.AlignLeft)
                 line_layout.addLayout(word_layout)
                 yes = False
             elif ftuples[i][0] == 'space':
                 word_layout = ss.HBoxLayout()
                 word.append(ftuples[i][1])
                 for file in word:
-                    word_layout.addSVG(file,alignment=ss.AlignCenter)
+                    word_layout.addSVG(file, alignment=ss.AlignCenter)
                 line_layout.addLayout(word_layout)
                 word = []
             elif ftuples[i][0] == "char":

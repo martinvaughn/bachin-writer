@@ -26,6 +26,10 @@ def get_folder(char: str, idx: int):
         _path = "svgs/spaces"
         num = get_random_number(_path)
         return ("space", "svgs/spaces/blank_template_" + str(num) + ".svg", idx)
+    if char == "£":
+        _path = "svgs/mini_spaces"
+        num = get_random_number(_path)
+        return ("mini_space", "svgs/mini_spaces/blank_template_" + str(num) + ".svg", idx)
         
     # Punctuation
     if char == ",":
