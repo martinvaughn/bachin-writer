@@ -11,7 +11,6 @@ def main():
     ftuples = []
     for idx, char in enumerate(input_str):
         folder_tuple = writer_utils.get_folder(char, idx)
-        # print(folder_tuple)
         ftuples.append(folder_tuple)
  
     result_layout = ss.VBoxLayout()
@@ -28,14 +27,14 @@ def main():
             if ftuples[i][0] == "new_line":
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
-                # add micro space to line_layout here writer_utils.get_folder(“ “, random_idx)
+                # add mini space at the beginning of each line.
                 mini_spaces_tuple = writer_utils.get_folder("£", 0)
                 line_layout.addSVG(mini_spaces_tuple[1], alignment=ss.AlignLeft)
                 
             if line_layout.get_size().width > 580: 
                 result_layout.addLayout(line_layout)
                 line_layout = ss.HBoxLayout()
-                # add micro space to line_layout here
+                # add mini space at the beginning of each line.
                 writer_utils.get_folder("£", 0)
                 mini_spaces_tuple = writer_utils.get_folder("£", 0)
                 line_layout.addSVG(mini_spaces_tuple[1], alignment=ss.AlignLeft)

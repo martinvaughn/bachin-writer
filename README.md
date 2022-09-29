@@ -42,6 +42,7 @@ Common Mistakes:
 2. Make sure you're using python 3.0.0 or above!
 3. The files `blank_template.svg`, `white_space.svg`, and all the svg folders are necessary to use the code. If you change file names, change the naming conventions (such as adding capitals when it should be lower case), or move around the folders, then the code will break. That doesn't mean you can't add or change characters, just stick to the naming conventions and don't change the file structure.
 4. Make sure to run the code in the same directory as the python files. You should be able to run `ls` (Mac) or `pwd` (Windows) and see the bachin-writer.py and bachin-centered.py files
+5. On windows (which I'm not as familiar with), it seems that your python instance can have different names such as "python", "py", "python3", etc. If using python3 isn't working in the above terminal commands, try using "python" or "py"
 
 
 
