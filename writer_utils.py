@@ -20,7 +20,6 @@ def get_folder(char: str, idx: int):
         _path = "svgs/upper/upper_" + char.lower()
         num = get_random_number(_path)
         return ("char", _path + "/upper_" + char.lower() + "_" + str(num) + ".svg", idx)
-    
     # Spaces    
     if char == " ":
         _path = "svgs/spaces"
